@@ -28,7 +28,7 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[] = []
   ) {
     super();
 
@@ -39,6 +39,7 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
+    this.wheels = wheels;
   }
   // TODO: Implement the wheelie method
     // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
