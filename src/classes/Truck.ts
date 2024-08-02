@@ -50,7 +50,7 @@ constructor(
   // If not, create 4 new Wheel objects
   // Otherwise, use the provided wheels array
   if (wheels.length !== 4) {
-    this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    this.wheels = wheels || [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
   } else {
     this.wheels = wheels;
   }
@@ -58,7 +58,8 @@ constructor(
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
     // TODO: Get the make an model of the vehicle if it exists
-    const { make, model } = vehicle ?? { make: '', model: '' };
+        if (vehicle && vehicle.make && vehicle.model) {
+      const { make, model } = vehicle;
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     if (vehicle.weight <= this.towingCapacity) {
       // TODO: If it is, log that the vehicle is being towed
@@ -67,6 +68,9 @@ constructor(
     } else {
       console.log(`${make} ${model} is too heavy to be towed`);
     }
+  } else {
+    console.log('Vehicle information is missing');
+  }
   }
 
   // TODO: Override the printDetails method from the Vehicle class
