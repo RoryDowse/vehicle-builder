@@ -174,11 +174,6 @@ class Cli {
         },
         {
           type: 'input',
-          name: 'wheels',
-          message: 'Enter Number of Wheels',
-        },
-        {
-          type: 'input',
           name: 'towingCapacity',
           message: 'Enter Towing Capacity',
         },
@@ -193,7 +188,7 @@ class Cli {
         parseInt(answers.year),
         parseInt(answers.weight),
         parseInt(answers.topSpeed),
-        answers.wheels,
+        [],
         parseInt(answers.towingCapacity)
         );
         // TODO: push the truck to the vehicles array
@@ -304,7 +299,7 @@ class Cli {
           choices: this.vehicles.map((vehicle) => {
             return {
               name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
-              value: vehicle.vin,
+              value: vehicle,
             };
           }),
         },
@@ -312,12 +307,13 @@ class Cli {
       .then((answers) => {
         // TODO: check if the selected vehicle is the truck
         const vehicleToTow = this.vehicles.find((vehicle) => vehicle.vin === answers.vehicleToTow);
-        if (answers.vehicleToTow instanceof Truck) {
+        if (answers.vehicleToTow.vin === truck.vin) {
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         console.log('The truck cannot tow itself');
         this.findVehicleToTow(truck);
-      } else if (vehicleToTow){
+      } else {
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+        console.log('Towing should be running');
           truck.tow(answers.vehicleToTow);
           this.performActions();
         }
@@ -352,6 +348,7 @@ class Cli {
       .then((answers) => {
        
 let selectedVehicle = this.vehicles.find(vehicle => vehicle.vin === this.selectedVehicleVin);
+// console.log(selectedVehicle);
       if (!selectedVehicle) return;
 
       if (answers.action === 'Print details') {

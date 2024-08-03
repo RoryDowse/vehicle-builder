@@ -45,18 +45,20 @@ constructor(
   this.year = year;
   this.weight = weight;
   this.topSpeed = topSpeed;
-  this.towingCapacity = towingCapacity;
-  // Check if the wheels array has 4 elements
+    // Check if the wheels array has 4 elements
   // If not, create 4 new Wheel objects
   // Otherwise, use the provided wheels array
-  if (wheels.length !== 4) {
-    this.wheels = wheels || [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+  if (!wheels || wheels.length !== 4) {
+    this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
   } else {
     this.wheels = wheels;
   }
+  this.towingCapacity = towingCapacity;
+
 }
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
+    // console.log(vehicle);
     // TODO: Get the make an model of the vehicle if it exists
         if (vehicle && vehicle.make && vehicle.model) {
       const { make, model } = vehicle;
@@ -78,17 +80,17 @@ constructor(
     // TODO: The method should log the details of the Truck
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
     override printDetails(): void {
+      super.printDetails();
       console.log(`VIN: ${this.vin}`);
       console.log(`Make: ${this.make}`);
       console.log(`Model: ${this.model}`);
       console.log(`Year: ${this.year}`);
       console.log(`Weight: ${this.weight} lbs`);
       console.log(`Top Speed: ${this.topSpeed} mph`);
-      console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
-      console.log(`Wheels: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`);
-      console.log(`Wheels: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`);
-      console.log(`Wheels: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`);
-      console.log(`Wheels: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`);
+      this.wheels.forEach((wheel, index) => {
+        console.log(`Wheel ${index + 1}: ${wheel.getDiameter} inch with a ${wheel.getTireBrand} tire`);
+      });
+      console.log(`Towing Capacity: ${this.towingCapacity} lbs`);     
     }
 }
 
