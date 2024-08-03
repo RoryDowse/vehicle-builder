@@ -2,6 +2,12 @@
 
 # Vehicle Builder
 
+## Introduction
+
+This project demonstrates the principles of Object-Oriented Programming (OOP). Watch the video below to learn more about the project:
+
+https://drive.google.com/file/d/1Uy1xkQuiZnnv_gZ1zxsxkHJ1ODjnC2Hy/view?usp=drive_link
+
 ## Description
 
 This project prompts the user to create new vehicles or select existing ones, demonstrating the principles of Object-Oriented Programming (OOP). By creating a Vehicle class as the base class and extending it to create specific vehicle types (Car, Truck, and Motorbike), the project showcases the concept of inheritance. Implementing "Driveable" functions (start, accelerate, decelerate, stop, turn, and reverse) in the Vehicle class demonstrates polymorphism. The Truck class further demonstrates composition by adding its own methods specific to trucks, such as "towingCapacity" and "tow". This project has enhanced understanding of how to model real-world objects and systems using OOP concepts.
