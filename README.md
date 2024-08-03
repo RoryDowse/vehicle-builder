@@ -4,9 +4,15 @@
 
 ## Introduction
 
-This project demonstrates the principles of Object-Oriented Programming (OOP). Watch the video below to learn more about the project:
+This project demonstrates the principles of Object-Oriented Programming (OOP).
+
+Watch the video below to learn more about the project:
 
 https://drive.google.com/file/d/1R-ngPIMKgweiBMfxdGWGjm9BPcg-Z6Yr/view?usp=drive_link
+
+View the code on GitHub:
+
+https://github.com/RoryDowse/vehicle-builder
 
 ## Description
 
