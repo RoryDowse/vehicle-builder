@@ -313,7 +313,7 @@ class Cli {
         this.findVehicleToTow(truck);
       } else {
         // if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-        console.log('Towing should be running');
+        // console.log('Towing should be running');
           truck.tow(answers.vehicleToTow);
           this.performActions();
         }
