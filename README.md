@@ -6,7 +6,7 @@
 
 This project demonstrates the principles of Object-Oriented Programming (OOP). Watch the video below to learn more about the project:
 
-https://drive.google.com/file/d/1V79NqxrkJbFsim-jws5jWRSQWB-9nhYc/view?usp=drive_link
+https://drive.google.com/file/d/1R-ngPIMKgweiBMfxdGWGjm9BPcg-Z6Yr/view?usp=drive_link
 
 ## Description
 
