@@ -306,7 +306,6 @@ class Cli {
       ])
       .then((answers) => {
         // check if the selected vehicle is the truck
-        const vehicleToTow = this.vehicles.find((vehicle) => vehicle.vin === answers.vehicleToTow);
         if (answers.vehicleToTow.vin === truck.vin) {
         // if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         console.log('The truck cannot tow itself');

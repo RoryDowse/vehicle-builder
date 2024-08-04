@@ -75,6 +75,10 @@ This project is licensed under the MIT license.
   [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) <br>
   [More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
 
+- Other:
+
+I would like to thank EdX tutor Eric Sayer, fellow student Ian Ferguson, and my friend Donald Cardwell for their support during the development of this project.
+
 ## Tests
 
 1. Create a new vehicle and perform an action: <br><br>
